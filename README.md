@@ -1,1 +1,1 @@
-# JavaScript utilities for Spec auth
+# Node.js utilities for Spec auth
