@@ -1,0 +1,55 @@
+{
+    "name": "@spec.dev/auth",
+    "version": "0.0.1",
+    "description": "Node.js helpers for interacting with Spec auth",
+    "keywords": [
+        "javascript",
+        "typescript",
+        "auth",
+        "spec"
+    ],
+    "homepage": "https://github.com/spec-dev/auth-util-js",
+    "bugs": "https://github.com/spec-dev/auth-util-js/issues",
+    "license": "MIT",
+    "author": "Spec",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "main": "dist/main/index.js",
+    "module": "dist/module/index.js",
+    "repository": "spec-dev/auth-util-js",
+    "scripts": {
+        "clean": "rimraf dist",
+        "format": "prettier --write \"{src,test}/**/*.ts\"",
+        "build": "genversion src/lib/version.ts --es6 && run-s clean format build:*",
+        "build:main": "tsc -p tsconfig.json",
+        "build:module": "tsc -p tsconfig.module.json",
+        "types-generate": "dts-gen -m '@spec.dev/auth' -s",
+        "test": "jest --runInBand"
+    },
+    "dependencies": {
+        "jsonwebtoken": "^8.5.1"
+    },
+    "devDependencies": {
+        "@types/jest": "^26.0.13",
+        "@types/jsonwebtoken": "^8.5.8",
+        "@types/node": "^17.0.10",
+        "faker": "^5.3.1",
+        "genversion": "^3.0.1",
+        "husky": "^4.3.0",
+        "jest": "^27.3.1",
+        "npm-run-all": "^4.1.5",
+        "prettier": "2.4.1",
+        "pretty-quick": "^3.1.0",
+        "rimraf": "^3.0.2",
+        "ts-jest": "^27.0.7",
+        "typedoc": "^0.22.11",
+        "typescript": "^4.5.5"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "pretty-quick --staged"
+        }
+    }
+}
