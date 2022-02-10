@@ -1,7 +1,7 @@
 {
     "name": "@spec.dev/auth",
     "version": "0.0.1",
-    "description": "Node.js helpers for interacting with Spec auth",
+    "description": "Node.js utils for interacting with Spec auth",
     "keywords": [
         "javascript",
         "typescript",
